@@ -1,0 +1,204 @@
+
+/*-----------------------------
+*       ChartViewer
+*----------------------------*/
+
+.chart-viewer{
+        @include sectionDefinition;
+        
+        &_theme{ background-color:$app-color-dark; }
+
+        // Chart Viewer  > Block  
+        &__block{  padding: 6rem 0 4rem;    }
+
+        // Chart Viewer  > Block  > Header
+        &__header{
+                text-align: center;
+
+                &--title{
+                        font-size: $font-size-huge;
+                        line-height: 5rem;
+                        font-weight: $bold-weight;
+                        color:$app-color-white;
+                }
+
+                &--desc{
+                        margin-top:1rem;
+                        line-height: 35px;
+                        font-size: $font-size-big;
+                        color:$app-color-white;
+                }
+        }
+
+        // Chart Viewer  > Block  > Inner
+        &__inner{
+                margin:4rem auto 2rem;
+                max-width: 29.375rem;
+                min-height:9.375rem;
+
+                &-box{ text-align: center }
+        }
+}
+
+/*-----------------------------
+*     Channel Manager
+*----------------------------*/
+
+.channel-manager{
+        @include sectionDefinition;
+        
+        &_theme{ background-color:$app-color-white; }
+
+        // Channel Manager  > Block  
+        &__block{  padding: 6rem 0 6rem;    }
+
+        // Channel Manager  > Block  > Inner
+        &__inner{
+                position: relative;
+                margin:auto;
+                padding-top:2rem;
+                max-width:40.8125rem;
+                width:100%;
+                min-height: 11.6875rem;
+                overflow-x:auto;
+
+                &_modifier{
+                        border:1px solid $app-color-silver;
+                        border-radius: 5px;
+                }
+        }
+
+        // Channel Manager  > Block  > Inner > Table
+        &__table{
+                &-head{
+                        tr th{
+                                padding: 0rem 2.5rem 1.5rem;
+                                font-size: $font-size-big ;
+                                color:$app-color-gray;
+                                text-align: left;
+                        }
+                }
+
+                &-body{
+                        margin-top:2rem;
+                        tr,td{
+                                padding: 1.5rem 2.5rem;
+                                border-top: 1px solid $app-color-silver;
+                                font-size: $font-size-extra-normal;
+                                color:$app-color-gray;
+
+                                &:hover{   background-color:$app-color-lsilver;    }
+                        }
+
+                        &-circle{
+                                display: block;
+                                width: 1.5rem;
+                                height: 1.5rem;
+                                border-radius: 100%;
+                        }
+
+                        &-btn{
+                                display: block;
+                                width:2rem;
+                                height:2rem;
+                                border:1px solid $app-color-gray;
+                                background-color: $app-color-white;
+                                cursor: pointer;
+                                border-radius: 100%;
+
+                                &--icon{  fill: $app-color-gray; }
+                        }
+                }
+        }
+}
+
+/*-----------------------------
+*     Channel Modal
+*----------------------------*/
+
+.channel-modal{
+        display: block;
+        position: fixed;
+        top:0;
+        left:0;
+        bottom:0;
+        right:0;
+        min-width: 100%;
+        min-height: 100%;
+
+        &_modifier{
+                background-color:rgba(0,0,0,0.5);
+                z-index:100;
+        }
+
+        //Channel modal > Inner
+        &__inner{
+                position: absolute;
+                padding: 3.5rem;
+                left:50%;
+                top:50%;
+                width:100%;
+                max-width:32.4375rem;
+                height:35rem;
+
+                &_modifier{
+                        background-color:$app-color-white;
+                        transform:translate(-50%,-50%);
+                        z-index:101;
+                }
+        }
+
+        //Channel modal > Inner > Close
+        &__close{
+                position: absolute;
+                width: 2.5625rem;
+                height: 2.5625rem;
+                right:1rem;
+                top:1rem;
+
+                &_effect{
+                        border: 1px solid $app-color-silver;
+                        background-color:$app-no-color;
+                        border-radius: 100%;
+                        box-sizing: border-box;
+                        cursor: pointer;
+                }
+
+                &--icon{
+                        width:1.5rem;
+                        height: 1.5rem;
+                        transform: translateY(0.15rem);
+                        fill:$app-color-silver;
+                }
+        }
+
+        //Channel modal > Inner > Header
+        &__header{
+                padding: 2rem 0 2rem;
+
+                &--title{
+                        font-size: $font-size-big;
+                        font-weight: $regular-weight;
+                        color:$app-color-dark;
+                }
+        }
+
+        //Channel modal > Inner > Form
+        &__form{
+
+                &-inner{  margin-bottom: 3.5rem;  }
+
+                &-actions{
+                        display: flex;
+                        justify-content:flex-end;
+                        margin-top:3.5rem;
+                }
+        }
+}
+
+//Mobile devices
+@media (max-width: 480px) {
+        .channel-modal{
+                &__inner{   padding: 3rem 1rem;  }
+        }
+}

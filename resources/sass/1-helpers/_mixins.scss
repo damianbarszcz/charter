@@ -1,0 +1,52 @@
+
+/*---------------------------------
+*     Section definitions
+*---------------------------------*/
+
+@mixin sectionDefinition {
+        position: relative;
+        min-width: 100%;
+        z-index:1;
+}
+
+/*---------------------------------
+*                 Loading
+*---------------------------------*/
+
+@mixin loading-spinner($activeColor: $app-color-blue, $selector: "&::before", $time: 0.5s) {
+
+        @keyframes spinner {
+                
+                0% { transform: translate3d(-50%, -50%, 0) rotate(0deg);  }
+
+                100% {  transform: translate3d(-50%, -50%, 0) rotate(360deg);  }
+        }
+
+        position: absolute;
+        animation-play-state: running;
+        opacity: 1;
+        
+        &.-paused { 
+                animation-play-state: paused; 
+                opacity: 0.2;
+                transition: opacity linear 0.1s;
+        }
+
+        #{$selector} {
+                position: absolute;
+                top:50%;
+                right:0;
+                left:50%;
+                height: 27px;
+                width: 27px;
+                content: "";
+                animation: $time linear infinite spinner;
+                animation-play-state: inherit;
+                border: solid 3px $app-color-white;
+                border-bottom-color: #{$activeColor};
+                border-radius: 50%;
+                opacity: inherit;
+                will-change: transform;
+                transform:translate(-50%,-50%);
+        }
+}

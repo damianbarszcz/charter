@@ -1,0 +1,22 @@
+/*-----------------------------------------------------
+ * app.scss
+ * Copyright 2022 Damian Barszcz
+ *-----------------------------------------------------*/
+
+ @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Rubik+Beastly&display=swap');
+
+// 1 - HELPERS
+@import '1-helpers/variables';
+@import '1-helpers/mixins';
+@import "1-helpers/animations"; 
+
+// 2 - BASICS
+@import '2-basics/reset';
+
+// 3 - LAYOUT
+@import "3-global/navigation"; 
+@import "3-global/footer"; 
+
+// 4 - PAGES
+@import "4-pages/welcome"; 
+@import "4-pages/add-channels"; 

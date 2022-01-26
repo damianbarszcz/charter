@@ -1,0 +1,29 @@
+
+/*-----------------------------
+*           Navigation
+*----------------------------*/
+
+.navigation{
+        @include sectionDefinition;
+
+        &_theme{ background-color:$app-color-white;    }
+
+        // Navigation > Block  
+        &__block{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                height: 5.25rem;
+        }
+
+        // Navigation > Brand
+        &__brand{
+                &--link{
+                        &_effect{
+                                font-size:$font-size-big * 1.35;
+                                font-weight: $ultra-bold-weight;
+                                color:$app-color-blue;
+                        }
+                }
+        }
+}

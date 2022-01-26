@@ -1,0 +1,36 @@
+
+/*-----------------------------
+*           Footer
+*----------------------------*/
+
+.footer{
+        @include sectionDefinition;
+
+        &_theme{ 
+                background-color:$app-color-white;  
+                border-top: 1px solid  $app-color-silver;
+        }
+
+        // Footer  > Block 
+        &__block{
+                display: flex;
+                padding:2.5rem 0 2.5rem;
+                justify-content: space-between;
+                align-items: center;
+                min-height: 4.25rem;
+        }
+
+        // Footer  > Block > Copyright
+        &__copyright{
+                &--caption{ color:$app-color-gray; line-height: 1.75rem; }
+        }
+
+        // Footer  > Block > Brand
+        &__brand{
+                &--caption{
+                        font-size:$font-size-big;
+                        font-weight: $ultra-bold-weight;
+                        color:$app-color-gray; 
+                }
+         }
+}

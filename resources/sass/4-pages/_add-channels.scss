@@ -1,0 +1,70 @@
+
+/*-----------------------------
+*       Add Channels
+*----------------------------*/
+
+.channel-adder{
+    @include sectionDefinition;
+
+    &_theme{ background-color:$app-color-lsilver; }
+
+        // Channel adder  >  Block  
+        &__block{  padding: 12rem 0 8rem;    }
+
+        // Channel adder  >  Block  > Header
+        &__header{  
+                position: absolute;
+                top:0;
+                padding:3.5rem 0 2rem;
+                min-width: 100%;
+
+                &_modifier{
+                        background-color:$app-color-white;
+                        border-bottom: 1px solid $app-color-silver;
+                        text-align: center;
+                }
+
+                &--title{
+                        font-size: $font-size-big;
+                        font-weight: $bold-weight;
+                        color:$app-color-dark;
+                }
+        }
+
+        // Channel adder  >  Block   > Inner
+        &__inner{
+                margin: auto;
+                padding: 4rem;
+                max-width:31.3125rem;
+                width:100%;
+                min-height: 26rem;
+
+                &_modifier{
+                        background-color:$app-color-white;
+                        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+                }
+        }
+
+        // Channel adder  >  Block   > Form
+        &__form{
+
+                &-inner{  margin-bottom: 3.5rem;  }
+
+                &-actions{
+                        display: flex;
+                        justify-content:flex-end;
+                        margin-top:4.5rem;
+                }
+        }
+}
+
+/*-----------------------------
+*        RWD System
+*----------------------------*/
+
+//Mobile devices
+@media (max-width: 480px) {
+        .channel-adder{
+                &__inner{   padding: 3rem 1rem;  }
+        }
+}

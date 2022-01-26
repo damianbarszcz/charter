@@ -1,0 +1,244 @@
+
+/*-----------------------------
+*             Reset
+*----------------------------*/
+
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box; 
+}
+
+*,*:focus,*:hover{
+    outline:none;
+}
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video,button {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    font-family:$page-font;
+}
+
+body { line-height: 1;}
+
+ol, ul, li { list-style: none;}
+
+table { border-collapse: collapse; border-spacing: 0; }
+
+input[type="text"]:disabled {
+        background-color: $app-color-silver;
+      }
+
+a{ text-decoration: none; }
+
+strong{  font-weight:$bold-weight;   }
+
+.g-container{
+        margin:auto;
+        position: relative;
+        max-width: 1140px;
+}
+
+/*-----------------------------
+*             Forms
+*----------------------------*/
+
+.form__label{
+        display: block;
+        margin-bottom:1rem;
+        font-size:$font-size-normal;
+        color:$app-color-dark;
+}
+
+.form__input{
+        min-width: 100%;
+        padding: 1rem 1.35rem;
+
+        &_effect{
+                background-color: $app-color-lsilver;
+                border: 1px solid $app-color-silver;
+                border-radius:5px;
+                font-size: $font-size-normal;
+                color:$app-color-gray;
+        }
+}
+
+.form__error{
+        position: absolute;
+        transform: translateY(0.85rem);
+        font-size:$font-size-normal * 0.9;
+        color:$app-color-red;
+}
+
+/*-----------------------------
+*             Buttons
+*----------------------------*/
+
+.btn--normal{
+        display: inline-block;
+        position: relative;
+        border:0;
+        min-width:9.375rem;
+        padding: 0.9rem 1.1rem;
+        line-height: 1.25rem;
+        font-size: $font-size-normal;
+        font-weight: $ultra-bold-weight;
+        text-align: center;
+        white-space: nowrap;
+        cursor: pointer;
+}
+
+.app__button--blue{
+        background-color:$app-color-blue;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        color:$app-color-white;
+
+        &:hover{ background-color: darken($app-color-blue, 15%); color:$app-color-white; }
+
+        &:focus{ color:$app-color-white; }
+}
+
+.app__button--tgray{
+        margin-right:2rem;
+        background-color:transparent;
+        border:2px solid $app-color-gray;
+        color:$app-color-gray;
+    
+        &:hover,&:focus{ color:$app-color-gray; }        
+    }
+
+.app__button--tred{
+        margin-right:2rem;
+        background-color:transparent;
+        border:2px solid $app-color-red;
+        color:$app-color-red;
+    
+        &:hover,&:focus{ color:$app-color-red; }        
+}
+
+.app__button--tblue{
+        background-color:transparent;
+        border:2px solid $app-color-blue;
+        color:$app-color-blue;
+    
+        &:hover,&:focus{ color:$app-color-blue; }        
+}
+
+.app__button--twhite{
+        background-color:transparent;
+        border:2px solid $app-color-white;
+        color:$app-color-white;
+    
+        &:hover,&:focus{ color:$app-color-white; }        
+}
+
+.loading__button{
+        background-color:$app-color-silver;
+        
+        &--spinner {
+                left:50%;
+                transform:translateX(-50%);
+
+                @include loading-spinner;
+        }
+}
+
+/*-----------------------------
+*       Action Msg
+*----------------------------*/
+
+.action-msg{
+        position: fixed;
+        padding: 1em 0 1rem;
+        bottom: 0rem;
+        width: 100%;
+
+        //Action msg > Animations
+        &--fadeInUp{
+                animation-name:  fadeInUp;
+                animation-duration:0.35s;
+                animation-fill-mode: forwards;
+        }
+
+        &--fadeInDown{
+                animation-name:  fadeInDown;
+                animation-duration:0.35s;
+                animation-fill-mode: forwards;
+        }
+
+        &_modifier{
+                background-color: $app-color-green;
+                z-index:100;
+        }
+
+        //Action msg > Inner
+        &__inner{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: auto;
+                width: 31.25rem;
+        }
+
+        //Action msg > Inner > Art
+        &__art{
+                display:inline-block;
+                position: relative;
+                margin-right: 1rem;
+                width:2.5rem;
+                height: 2.5rem;
+
+                &_effect{
+                        border: 2px solid $app-color-white;
+                        border-radius: 100%;
+                }
+
+                &--icon{
+                    transform: translate(0.25rem, 0.25rem);
+                     fill:$app-color-white;
+                }
+        }
+
+        //Action msg > Inner > Caption
+        &__caption{
+                font-weight: $bold-weight;
+                color:$app-color-white;
+        }
+}
+
+/*-----------------------------
+*        RWD System
+*----------------------------*/
+
+//Desktops, large screens
+@media (max-width: 1200px) {
+        .g-container{  width:88vw; }
+}
+
+//Small screens, laptops
+@media (max-width: 960px) {
+        .g-container{ width:88.5vw;  }
+}
+
+//iPads, Tablets
+@media (max-width: 768px) {
+        .g-container{  width:89vw; }
+}
+
+//Mobile devices (horizonal)
+@media (max-width: 576px) {
+        .g-container{ width:89.5vw; }
+}
+
+//Mobile devices
+@media (max-width: 480px) {
+        .g-container{ width:90vw;  }
+}
